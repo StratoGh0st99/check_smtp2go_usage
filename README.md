@@ -20,8 +20,9 @@
    ```
 3. Download or clone this repository and place the script in the plugins folder
    ```
-   cd /usr/lib/nagios/plugins/
    git clone https://github.com/StratoGh0st99/check_smtp2go_usage.git
+   cd check_smtp2go_usage
+   cp check_smtp2go_usage.py /usr/lib/nagios/plugins/
    ```
 4. Make the script executable.
    ```
@@ -48,25 +49,25 @@ OK - 200 of 1000 mails used (20.00%) | mails_used=200;800;900;0;1000 usage_perce
 1. Define the CheckCommand in Icinga2
    ```
    object CheckCommand "check_smtp2go_quota" {
-   import "plugin-check-command"
-   command = [ "/usr/lib/nagios/plugins/check_smtp2go_quota.py" ]
-   arguments = {
-     "--api-key" = "$smtp2go_api_key$"
-     "--warn" = "$smtp2go_warn$"
-     "--crit" = "$smtp2go_crit$"
-     }
+     import "plugin-check-command"
+     command = [ "/usr/lib/nagios/plugins/check_smtp2go_quota.py" ]
+     arguments = {
+       "--api-key" = "$smtp2go_api_key$"
+       "--warn" = "$smtp2go_warn$"
+       "--crit" = "$smtp2go_crit$"
+       }
    }
    ```
 2. Apply the service to a host
    ```
    apply Service "smtp2go-quota" {
-   import "generic-service"
-   check_command = "check_smtp2go_quota"
-   vars.smtp2go_api_key = "YOUR_API_KEY"
-   vars.smtp2go_warn = "80"
-   vars.smtp2go_crit = "90"
-   assign where host.name == "myhost"
-   }
+     import "generic-service"
+     check_command = "check_smtp2go_quota"
+     vars.smtp2go_api_key = "YOUR_API_KEY"
+     vars.smtp2go_warn = "80"
+     vars.smtp2go_crit = "90"
+     assign where host.name == "myhost"
+     }
    ```
 3. Reload Icinga2
    ```
