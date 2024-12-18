@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-#Author: paul.reingruber@lamilux.de
+
+#Author: StratoGh0st99
+#GitHub: https://github.com/StratoGh0st99/check_smtp2go_usage
+#Icingaexchange: https://exchange.icinga.com/StratoGh0st99/check_smtp2go_usage
 
 import sys
 import requests
