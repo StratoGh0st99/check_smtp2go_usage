@@ -1,3 +1,13 @@
-name: check_smtp2go_usage
+name: "SMTP2Go Mail Usage Check Plugin"
 description: "file:///README.md"
+version: "1.0.0"
 url: "https://github.com/StratoGh0st99/check_smtp2go_usage.git"
+license: "MIT"
+tags:
+  - smtp2go
+  - mail
+  - usage
+  - monitoring
+  - icinga2
+  - api
+  - smtp
