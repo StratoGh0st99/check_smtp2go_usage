@@ -50,11 +50,11 @@ OK - 200 of 1000 mails used (20.00%) | mails_used=200;800;900;0;1000 usage_perce
    object CheckCommand "check_smtp2go_quota" {
    import "plugin-check-command"
    command = [ "/usr/lib/nagios/plugins/check_smtp2go_quota.py" ]
-     arguments = {
-       "--api-key" = "$smtp2go_api_key$"
-       "--warn" = "$smtp2go_warn$"
-       "--crit" = "$smtp2go_crit$"
-       }
+   arguments = {
+     "--api-key" = "$smtp2go_api_key$"
+     "--warn" = "$smtp2go_warn$"
+     "--crit" = "$smtp2go_crit$"
+     }
    }
    ```
 2. Apply the service to a host
