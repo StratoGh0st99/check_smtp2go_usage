@@ -36,9 +36,11 @@
    ./check_smtp2go_quota.py --api-key YOUR_API_KEY --warn 80 --crit 90
    ```
 ### Parameters
-- **-a / --api-key (required):** Your SMTP2Go API key
-- **-w / --warn (required):** Warning threshold in percent (e.g. 80 for 80%)
-- **-c / --crit (required):** Critical threshold in percent (e.g. 90 for 90%)
+**-a / --api-key (required):** Your SMTP2Go API key
+
+**-w / --warn (required):** Warning threshold in percent (e.g. 80 for 80%)
+
+**-c / --crit (required):** Critical threshold in percent (e.g. 90 for 90%)
 
 ### Example Output
 ```
